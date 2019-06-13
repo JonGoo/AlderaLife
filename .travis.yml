@@ -10,5 +10,3 @@ test:
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS alderalifetest;'
-
-script: ./mvnw clean install -DskipTests=true
