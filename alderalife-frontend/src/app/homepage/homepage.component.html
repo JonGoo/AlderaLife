@@ -1,139 +1,98 @@
 <section id="allIntroElement">
   <div id="startPageHeader"></div>
-  <div id="intro" class="div1">
-    <h1>Un serveur RP pour tous, un serveur Fivem qui vous ressemble</h1>
-    <a href="#presentation" onclick="goToByScroll('presentation');change(2)">Découvrir Aldera Life</a>
+  <div id="intro">
+    <h1>AlderaLife GTA RP<br>La ville est votre terrain de jeu !</h1>
+    <a href="#presentation" [ngx-scroll-to]="'#presentation'">Découvrir Aldera Life</a>
   </div>
 </section>
 
 <hr>
 
-<section id="presentation" class="div2">
+<section id="presentation">
   <header>
-    <h2>Sensory Garden, c'est quoi ?</h2>
+    <h2>Les Métiers</h2>
   </header>
-  <div id="gridBox">
-    <div id="sensory" class="gridPresentation">
-      <img src="IMG/icon/soil.svg" alt="Image Mains dans la terre">
-      <h3>Sensory Garden</h3>
-      <p>Ayez toujours un oeil sur votre potager</p>
-    </div>
-    <div id="solarPanl" class="gridPresentation">
-      <img src="IMG/icon/solar-energy.svg" alt="Image Énergie Solaire">
-      <h3>Panneau solaire</h3>
-      <p>Energie Solaire pour alimenter la batterie</p>
+  <div class="gridBox">
+    <div id="lspd" class="gridPresentation">
+      <img src="../../assets/lspd.png" alt="Image Mains dans la terre">
+      <p><b>LSPD</b></p>
     </div>
 
-    <div id="water" class="gridPresentation">
-      <img src="IMG/icon/raindrops.svg" alt="Image de goutte d'eau">
-      <h3>Humidité</h3>
-      <p>Détecteur d'humidité dans la terre</p>
+    <div id="gouv" class="gridPresentation">
+      <img src="../../assets/gouv.png" alt="Image Énergie Solaire">
+      <p><b>Gouvernement</b></p>
     </div>
 
-    <div id="forum" class="gridPresentation">
-      <img src="IMG/icon/globe-grid.svg" alt="Image de main autour de la terre">
-      <h3>Forum</h3>
-      <p>Partage de connaissance</p>
+    <div id="ems" class="gridPresentation">
+      <img src="../../assets/ems.png" alt="Image d'un médecin">
+      <p><b>EMS</b></p>
     </div>
 
-    <div id="textIntro" class="gridPresentation">
-      <p>Sensory Garden est une serre connectée directement à votre smartphone. Cette serre miniature vous permettra de faire vos potagers d'intérieur en toute facilité.
-        Toutes les données importantes à la culture de légumes seront collectés grâce à nos capteurs choisi judicieusement par nos jardiniers en herbe !
-        Vous avez des expériences à partager ou bien simplement besoin de conseils ? Nous y avons pensé ! Un forum participatif sera disponible pour tous les membres.
-      </p>
+    <div id="ferme" class="gridPresentation">
+      <img src="../../assets/ferme.png" alt="Image d'un fermier">
+      <p><b>Fermier</b></p>
+    </div>
+
+    <div id="brinks" class="gridPresentation">
+      <img src="../../assets/brinks.png" alt="Image d'un camion de la brinks">
+      <p><b>Brinks</b></p>
+    </div>
+
+    <div id="bar" class="gridPresentation">
+      <img src="../../assets/bar.png" alt="Image du tequilala">
+      <p><b>Barman</b></p>
+    </div>
+
+    <div id="taxi" class="gridPresentation">
+      <img src="../../assets/taxi.png" alt="Image de taxi">
+      <p><b>Taximan</b></p>
+    </div>
+
+    <div id="mecano" class="gridPresentation">
+      <img src="../../assets/mecano.png" alt="Image d'un mecano">
+      <p><b>Mécano</b></p>
+    </div>
+
+    <div id="avocat" class="gridPresentation">
+      <img src="../../assets/avocat.png" alt="Image de main autour de la terre">
+      <p><b>Avocat</b></p>
     </div>
   </div>
 </section>
 
 <hr>
 
-<section id="team" class="div3">
+<section id="acti">
   <header>
-    <h2>Notre équipe : </h2>
+    <h2>Les Activités</h2>
   </header>
-  <div id="gridBoxTeam">
-    <div id="simFau">
-      <img src="IMG/team/simFau2.jpg" alt="Photo Simon Fauconnier">
-      <p><b>Simon Fauconnier</b></p>
-      <p><i>Développeur</i></p>
+  <div class="gridBox">
+    <div id="helico" class="gridPresentation">
+      <img src="../../assets/helico.png" alt="Photo Hélico">
+      <p><b>Hélico</b></p>
     </div>
 
-    <div id="adrNin">
-      <img src="IMG/team/adrNini.jpg" alt="Photo Adrien Nini Pereira">
-      <p><b>Adrien Nini Pereira</b></p>
-      <p><i>Développeur Back-end</i></p>
+    <div id="avion" class="gridPresentation">
+      <img src="../../assets/avion.png" alt="Photo avion">
+      <p><b>Avion</b></p>
     </div>
 
-    <div id="jonGoo">
-      <img src="IMG/team/jonGoo2.jpg" alt="Photo Jonathan Goossens">
-      <p><b>Jonathan Goossens</b></p>
-      <p><i>Développeur</i></p>
+    <div id="bateau" class="gridPresentation">
+      <img src="../../assets/bateau.png" alt="Photo bateau">
+      <p><b>bateau</b></p>
     </div>
 
-    <div id="benDmh">
-      <img src="IMG/team/benDmh.jpg" alt="Photo Benoît de Mahieu">
-      <p><b>Benoît de Mahieu</b></p>
-      <p><i>Product Owner</i></p>
+    <div id="submarine" class="gridPresentation">
+      <img src="../../assets/submarine.png" alt="Photo sous marin">
+      <p><b>Sous<br>Marin</b></p>
     </div>
 
-    <div id="yveHen">
-      <img src="IMG/team/yveHen2.jpg" alt="Photo Yves Henry de Generet">
-      <p><b>Yves Henry de Generet</b></p>
-      <p><i>Responsable légal</i></p>
-    </div>
-
-    <div id="casDuq">
-      <img src="IMG/team/casDuq.jpg" alt="Photo Cassandra Duquaine">
-      <p><b>Cassandra Duquaine</b></p>
-      <p><i>Chairman - Responsable Financier</i></p>
-    </div>
-
-    <div id="nazHey">
-      <img src="IMG/team/nazHey.jpg" alt="Photo Nazanin Heydari">
-      <p><b>Nazanin Heydari</b></p>
-      <p><i>Responsable Stratégique et Opérationnel</i></p>
+    <div id="golf" class="gridPresentation">
+      <img src="../../assets/golf.png" alt="Photo golfeur">
+      <p><b>Golf</b></p>
     </div>
 
   </div>
 </section>
 
-<hr>
 
-<section id="contact" class="div4">
-  <header>
-    <h2 id="contactTitle">Une question ou suggestion ? <wbr> Envoyez nous une lettre !</h2>
-  </header>
-  <form id="formContact" action="#">
-    <p id="errorContactForm"></p>
-    <div id="letter">
-      <div id="formData">
-
-        <label for="formName">Nom *</label>
-        <input id="formName" name="formName" type="text" placeholder="Votre nom" required>
-
-        <label for="mail">Adresse email *</label>
-        <input id="mail" name="mail" type="email" placeholder="Votre adresse mail" required>
-
-        <label id="mail2">Email: <input type="email" name="mail2"></label>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message ici" required></textarea>
-
-      </div>
-
-      <div id="stamp">
-        <img src="IMG/icon/stamp.svg" alt="Image de timbre">
-      </div>
-
-      <div id="addressZone">
-        <p>To: SensoryGarden</p>
-        <p>Belgique</p>
-      </div>
-    </div>
-
-    <div id="contactButton">
-      <input type="submit" value="Envoyer">
-      <input type="reset" value="Supprimer">
-    </div>
-  </form>
-</section>
