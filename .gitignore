@@ -2,6 +2,12 @@ HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+/alderalife-backend/target/
+/alderalife-backend/.mvn/
+/alderalife-backend/.idea/
+/alderalife-backend/mvnw
+/alderalife-backend/mvnw.cmd
+
 ### STS ###
 .apt_generated
 .classpath
@@ -30,3 +36,5 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+/tm-tool-ris-sim/
