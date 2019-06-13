@@ -10,5 +10,5 @@ test:
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS alderalifetest;'
-  - mysql -e 'CREATE USER 'springuser'@'localhost' IDENTIFIED BY 'ThePassword'';
+  - mysql -e 'CREATE USER 'springuser'@'localhost' IDENTIFIED BY 'ThePassword';'
   - mysql -e 'GRANT ALL PRIVILEGES ON alderalifetest.* TO 'springuser'@'localhost'';
