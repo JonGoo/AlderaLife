@@ -48,6 +48,14 @@ export class AuthService {
       }));
   }
 
+  register(email: string, password: string, username: string) {
+    return this.http.post<any>('/api/auth/signup', {username, email, password})
+      .pipe(map(user => {
+
+        return user;
+      }));
+  }
+
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
