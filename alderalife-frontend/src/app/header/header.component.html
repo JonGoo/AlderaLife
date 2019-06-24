@@ -10,10 +10,11 @@
     <nav id="menu">
       <ul>
         <li><a class="current" href="">Home</a></li>
-        <li><a class="" href="/whitelist">Whitelist</a></li>
-        <li><a class="" href="/user">Page Perso</a></li>
-        <li><a class="" href="/admin">Page Admin</a></li>
-        <li><a class="" href="#connexion" onclick="connexionPopUp();toggleRegisterLogIn('logIn')">Connexion</a></li>
+        <li><a class="" href="/whitelist" *ngIf="!auth.isTokenExpired()">Whitelist</a></li>
+        <li><a class="" href="/user" *ngIf="!auth.isTokenExpired()">Page Perso</a></li>
+        <li><a class="" href="/admin" *ngIf="!auth.isTokenExpired()">Page Admin</a></li>
+        <li><a class="" (click)="connexionPopUp()" *ngIf="auth.isTokenExpired()">Connexion</a></li>
+        <li><a class="" (click)="logout()" *ngIf="!auth.isTokenExpired()">Déconnexion</a></li>
       </ul>
     </nav>
   </div>

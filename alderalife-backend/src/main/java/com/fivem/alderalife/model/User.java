@@ -24,10 +24,6 @@ public class User extends DateAudit {
     private Long id;
 
     @NotBlank
-    @Size(max = 40)
-    private String name;
-
-    @NotBlank
     @Size(max = 15)
     private String username;
 
@@ -41,6 +37,8 @@ public class User extends DateAudit {
     @Size(max = 100)
     private String password;
 
+    private boolean isEnabled;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -51,8 +49,7 @@ public class User extends DateAudit {
 
     }
 
-    public User(String name, String username, String email, String password) {
-        this.name = name;
+    public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -72,14 +69,6 @@ public class User extends DateAudit {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEmail() {
@@ -104,5 +93,13 @@ public class User extends DateAudit {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
     }
 }

@@ -1,0 +1,36 @@
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <form id="formConnexion" (ngSubmit)="authenticate()">
+    <header>
+      <h2 *ngIf="!register">Connexion</h2>
+      <h2 *ngIf="register">Inscription</h2>
+      <a href="#" onclick="closePopup()"><img id="closeConnexion" src="../../assets/close-white.svg" alt="Annuler"></a>
+    </header>
+    <main>
+      <label for="subPseudo" *ngIf="register">Votre pseudo<br></label>
+      <input id="subPseudo" name="subPseudo" type="text" placeholder="Votre pseudo" *ngIf="register" required [(ngModel)]="username">
+      <br>
+      <label for="subMail">Adresse email<br></label>
+      <input id="subMail" name="subMail" type="email" placeholder="Votre adresse email" required [(ngModel)]="email">
+      <br>
+      <label for="subConfirmMail" class="visuallyhidden" *ngIf="register">Confirmez votre adresse email<br></label>
+      <input id="subConfirmMail" name="subConfirmMail" type="email" placeholder="Confirmez votre adresse email" *ngIf="register" required [(ngModel)]="confirmEmail">
+      <br>
+      <label for="password" class="visuallyhidden">Mot de passe<br></label>
+      <input id="password" name="password" type="password" placeholder="Mot de passe" required [(ngModel)]="password">
+      <br>
+      <label for="confirmPassword" class="visuallyhidden" *ngIf="register">Confirmez votre mot de passe<br></label>
+      <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Corfirmez votre mot de passe" *ngIf="register" required [(ngModel)]="confirmPassword">
+      <br>
+      <a id="forgotMDP" href="#" *ngIf="!register">Mot de passe oublié ?</a>
+      <br>
+    </main>
+    <footer>
+      <input id="buttonRegister" type="submit" [value]="registerButton">
+      <p id="register" *ngIf="!register">Pas encore inscrit ? <a (click)="register = true; registerButton = 'S\'inscrire';">S'inscrire</a></p>
+      <p id="login" *ngIf="register">Déjà inscrit ? <a (click)="register = false; registerButton = 'Se connecter';">Se connecter</a></p>
+    </footer>
+  </form>
+
+</div>

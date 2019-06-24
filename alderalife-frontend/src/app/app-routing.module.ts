@@ -6,7 +6,7 @@ import {UserpageComponent} from './userpage/userpage.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'user', component: UserpageComponent, children: [
-      {path: 'create'},
+      {path: 'create', component: HomepageComponent },
     ]
   }
 ];
