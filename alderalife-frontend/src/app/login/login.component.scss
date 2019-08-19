@@ -128,6 +128,10 @@
   margin: auto 0.5em auto auto;
 }
 
+#closeConnexion:hover {
+  cursor: pointer;
+}
+
 #formConnexion main {
   padding: 1em;
 }
@@ -138,7 +142,7 @@
 
 #formConnexion #subError {
   outline: 0;
-  background: #f2f2f2;
+  background: #c3c3c3;
   width: 90%;
   margin: 0 0 1em;
   padding: 1em;
@@ -146,5 +150,6 @@
   box-sizing: border-box;
   font-size: 1em;
   display: inline-block;
+  color: var(--main-bg-color);
 }
 

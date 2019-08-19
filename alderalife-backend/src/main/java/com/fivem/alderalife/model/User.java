@@ -1,5 +1,6 @@
 package com.fivem.alderalife.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fivem.alderalife.model.audit.DateAudit;
 import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
@@ -18,6 +19,7 @@ import java.util.Set;
                 "email"
         })
 })
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User extends DateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,6 +46,9 @@ public class User extends DateAudit {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
+    private Set<Whitelist> whitelists = new HashSet<>();
 
     public User() {
 

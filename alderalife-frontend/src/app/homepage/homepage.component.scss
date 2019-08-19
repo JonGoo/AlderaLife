@@ -7,11 +7,11 @@
 
 #intro h1 {
   color: var(--main-bg-color);
-  font-size: 4em;
+  font-size: 5vw;
   text-shadow: 1px 0 black;
   opacity: 1;
   padding: 0.2em;
-  margin: 23vh 4vw 0 4vw;
+  margin: 0 4vw;
   background-color: rgba(255, 255, 255, 0.45);
   border-radius: 10px;
   border: 1px solid var(--main-bg-color);
@@ -89,6 +89,7 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 3vw;
 }
 
 .gridPresentation {
@@ -98,7 +99,7 @@
 
 #presentation h2 {
   font-family: "fall_is_comingregular", sans-serif;
-  font-size: 5em;
+  font-size: 6vw;
   letter-spacing: 4px;
   margin: 0;
   text-align: center;
@@ -112,7 +113,7 @@
 
 #acti h2 {
   font-family: "fall_is_comingregular", sans-serif;
-  font-size: 5em;
+  font-size: 6vw;
   letter-spacing: 4px;
   margin: 0 auto 0.3em auto;
 }

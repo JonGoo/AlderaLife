@@ -1,0 +1,73 @@
+<div class="contentZone">
+  <div class="content">
+    <div class="userInfoZone">
+
+      <table mat-table
+             [dataSource]="dataSource" multiTemplateDataRows
+             class="mat-elevation-z8" matSort>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="pseudo">
+          <th mat-header-cell *matHeaderCellDef> Pseudo </th>
+          <td mat-cell *matCellDef="let row"> {{row.user.username}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="age">
+          <th mat-header-cell *matHeaderCellDef> Age </th>
+          <td mat-cell *matCellDef="let row"> {{row.age}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="steamid">
+          <th mat-header-cell *matHeaderCellDef> Steam HEX </th>
+          <td mat-cell *matCellDef="let row"> {{row.steamid}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstNameRp">
+          <th mat-header-cell *matHeaderCellDef> Prénom RP </th>
+          <td mat-cell *matCellDef="let row"> {{row.firstNameRp}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastNameRp">
+          <th mat-header-cell *matHeaderCellDef> Nom RP </th>
+          <td mat-cell *matCellDef="let row"> {{row.lastNameRp}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="avenirRp">
+          <th mat-header-cell *matHeaderCellDef> Avenir RP </th>
+          <td mat-cell *matCellDef="let row"> {{row.avenirRp}} </td>
+        </ng-container>
+
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+            <div class="element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+              <div class="element-experience">
+                <h4>Experience RP:</h4>
+                {{element.experience}}
+              </div>
+              <div class="element-background">
+                <h4>Background:</h4>
+                {{element.background}}
+              </div>
+              <button (click)="accept(element.id)" *ngIf="(element.refused || !element.accepted) && (!element.refused || element.accepted)">Accepter</button>
+              <button (click)="refuse(element.id)" *ngIf="(element.refused || !element.accepted) && (!element.refused || element.accepted)">Refuser</button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+            class="element-row"
+            [class.expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

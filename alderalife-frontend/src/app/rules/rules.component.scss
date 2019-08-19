@@ -1,0 +1,182 @@
+@import url(https://fonts.googleapis.com/css?family=Ruluko);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+main .sidebar {
+  background: #B51800;
+  width: 25%;
+  position: fixed;
+  margin-bottom: 0;
+  color: whitesmoke;
+  text-shadow: 1px 1px #0d0d0d;
+  overflow: auto;
+  height: 600px;
+}
+
+main .sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main .sidebar ol {
+  margin: 0;
+  padding: 0;
+}
+
+main .sidebar li {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #2F2F2F;
+}
+
+main .sidebar li:hover {
+  border-right: .5rem solid #000000;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.4);
+}
+
+main .sidebar a {
+  color: whitesmoke;
+  display: block;
+  padding: 1.5em .2em;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.3vw;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+main .sidebar a:before {
+  content: "SideBar";
+}
+
+main .sidebar a:hover {
+  color: #000000;
+  margin-left: 1rem;
+}
+
+body>header {
+  height: 9rem;
+}
+
+body>header h1 {
+  line-height: 2rem;
+}
+
+body>header h1 span {
+  line-height: 8rem;
+}
+
+main {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+main .sidebar {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+main .sidebar ul li {
+  margin: 0;
+  list-style-type: none;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+main .sidebar ul li:last-child {
+  border-bottom: none;
+}
+
+main li {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+}
+
+main .sidebar a:before {
+  content: "";
+}
+
+#all-content {
+  flex: 1;
+  padding-left: 3vw;
+  margin-left: 25%;
+  font-size: 1.5vw;
+}
+
+.info {
+  background-color: #612929;
+  border-radius: 20px;
+  /* The border-radius gives rounded corners.*/
+  color: white;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+h2 {
+  margin: 10px;
+}
+
+.info {
+  background-color: #F3E2E2;
+  padding: 4px;
+  margin: 10px;
+  border-radius: 4px;
+  color: black;
+}
+
+.info-title {
+  font-size: 2.8vw;
+  margin: 8px;
+  text-align: center;
+  color: #612929;
+}
+
+.info-description {
+  font-weight: lighter;
+  /* this makes the font a bit less dark */
+  font-size: 1.5vw;
+  margin: 6px;
+}
+
+#first-li {
+  border-top: 2px solid #2F2F2F;
+}
+
+@media only screen and (max-width: 600px) {
+  .info-title {
+    font-size: 5vw;
+  }
+  .info-description {
+    font-size: 3vw;
+  }
+  #all-content {
+    font-size: 3vw;
+  }
+  main .sidebar a {
+    font-size: 3vw;
+  }
+}

@@ -2,6 +2,7 @@ package com.fivem.alderalife.model;
 
 public enum RoleName {
     ROLE_USER,
-    ROLE_ADMIN,
-    ROLE_MOD
+    ROLE_WHITELIST,
+    ROLE_MOD,
+    ROLE_ADMIN
 }

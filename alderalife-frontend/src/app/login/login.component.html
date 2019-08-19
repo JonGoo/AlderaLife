@@ -5,9 +5,10 @@
     <header>
       <h2 *ngIf="!register">Connexion</h2>
       <h2 *ngIf="register">Inscription</h2>
-      <a href="#" onclick="closePopup()"><img id="closeConnexion" src="../../assets/close-white.svg" alt="Annuler"></a>
+      <a (click)="closePopup()"><img id="closeConnexion" src="../../assets/close-white.svg" alt="Annuler"></a>
     </header>
     <main>
+      <p id="subError" *ngIf="error">{{error}}</p><br>
       <label for="subPseudo" *ngIf="register">Votre pseudo<br></label>
       <input id="subPseudo" name="subPseudo" type="text" placeholder="Votre pseudo" *ngIf="register" required [(ngModel)]="username">
       <br>

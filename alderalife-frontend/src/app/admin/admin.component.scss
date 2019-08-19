@@ -1,0 +1,73 @@
+
+
+#document_Main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+  -ms-grid-columns: 30% 70%;
+  grid-template-columns: 30% 70%;
+
+}
+
+.sideNav {
+  border: 1px solid black;
+  border-radius: 10px 0 0 10px;
+  height: fit-content;
+  margin: 1em 1em 1em;
+  padding: 1em 0.5em 1em 0.5em;
+  background-color: #bebebe;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  z-index: 10;
+}
+.sideNav a {
+  text-decoration: none;
+  color: black;
+}
+
+.sideNav ul {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+.sideNav ul li {
+  padding-left: 0.7em;
+}
+
+.sideNav ul p {
+  margin: 0;
+  padding: 0;
+}
+
+.sideNav .underTitle {
+  margin-top: 2em;
+}
+
+.sideNav .subMenu {
+  margin-top: 0.7em;
+  padding: 0.5em;
+  border: 1px solid transparent;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+.sideNav .subMenu:hover,
+.sideNav .currentUserMenu {
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.menuUser {
+  overflow: auto;
+}
+
+router-outlet {
+  grid-row: 2;
+}

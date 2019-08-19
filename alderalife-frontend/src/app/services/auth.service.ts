@@ -35,6 +35,66 @@ export class AuthService {
     return !(date.valueOf() > new Date().valueOf());
   }
 
+  getRoles(token?: string) {
+    if (!token) { token = this.getToken(); }
+
+    const decoded = jwt_decode(token);
+    if (decoded.role === undefined) { return null; }
+    return decoded.role;
+  }
+
+  isAdmin(): boolean {
+    const roles = this.getRoles();
+
+    for (let x of roles) {
+      if (x.name == 'ROLE_ADMIN') {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  isMod(): boolean {
+    const roles = this.getRoles();
+
+    for (let x of roles) {
+      if (x.name == 'ROLE_MOD') {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  getUserId(token?: string): number {
+    if (!token) { token = this.getToken(); }
+
+    const decoded = jwt_decode(token);
+    if (decoded.sub === undefined) { return null; }
+    return decoded.sub;
+  }
+
+  isUser(): boolean {
+    const roles = this.getRoles();
+
+    for (let x of roles) {
+      if (x.name == 'ROLE_USER') {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  isWhitelist(): boolean {
+    const roles = this.getRoles();
+
+    for (let x of roles) {
+      if (x.name == 'ROLE_WHITELIST') {
+        return true;
+      }
+    }
+    return false;
+  }
+
   login(email: string, password: string ) {
     return this.http.post<any>('/api/auth/signin', {usernameOrEmail: email, password})
       .pipe(map(user => {

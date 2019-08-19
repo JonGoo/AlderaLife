@@ -1,0 +1,25 @@
+.confirmPopUp {
+  position: fixed;
+  text-align: center;
+  background-color: white;
+  width: 40vw;
+  height: auto;
+  border: 1px solid black;
+  z-index: 10001;
+  font-family: "Roboto", sans-serif;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1em;
+}
+
+.confirmPopUp button {
+  font-size: 1em;
+  width: 40%;
+  padding: 0.5em;
+}

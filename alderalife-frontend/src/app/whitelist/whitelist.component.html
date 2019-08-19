@@ -1,0 +1,69 @@
+<div class="contentZone">
+  <div class="content">
+    <div class="userInfoZone">
+      <form class="userInfoForm" (ngSubmit)="createWhitelist()" *ngIf="canWhitelist">
+        <header>
+          <h2>Demande de Whitelist</h2>
+        </header>
+        <main>
+          <mat-checkbox [(ngModel)]="whitelist.hasReadRules" name="hasReadRules" required>Avez vous lu le <a href="rules" target="_blank">réglement</a> ?</mat-checkbox>
+
+          <mat-form-field [floatLabel]="'auto'" class="smaller">
+            <mat-label>Votre age IRL</mat-label>
+            <input matInput placeholder="Votre age IRL" name="age" [(ngModel)]="whitelist.age" required>
+            <mat-hint>Si vous avez en dessous de 18 ans, tentez votre chance !</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field [floatLabel]="'auto'">
+            <mat-label>Votre expérience roleplay</mat-label>
+            <textarea matInput placeholder="Votre expérience roleplay" name="experience" [(ngModel)]="whitelist.experience" required></textarea>
+            <mat-hint>Les serveurs, le nombres d'heures, les différents jeux, ...</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field [floatLabel]="'auto'" class="smaller">
+            <mat-label>Votre Steam ID (hex)</mat-label>
+            <input matInput placeholder="Votre Steam ID (hex)" name="steam" [(ngModel)]="whitelist.steamid" required>
+            <mat-hint>Pour trouver votre steam ID (hex): <a href="http://vacbanned.com">http://vacbanned.com</a> Copiez y votre lien de page de profile steam</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field [floatLabel]="'auto'" class="smaller">
+            <mat-label>Votre prénom RP</mat-label>
+            <input matInput placeholder="Votre prénom RP" name="firstname" [(ngModel)]="whitelist.firstNameRp" required>
+            <mat-hint>Si vous ne savez pas encore, ce n'est pas grave</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field [floatLabel]="'auto'" class="smaller">
+            <mat-label>Votre nom RP</mat-label>
+            <input matInput placeholder="Votre nom RP" name="lastname" [(ngModel)]="whitelist.lastNameRp" required>
+            <mat-hint>Si vous ne savez pas encore, ce n'est pas grave</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field [floatLabel]="'auto'">
+            <mat-label>Votre background</mat-label>
+            <textarea matInput placeholder="Votre background" name="background" [(ngModel)]="whitelist.background" required></textarea>
+            <mat-hint>Expliquez brievement votre but</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field class="smaller">
+            <mat-label>Quelle orientation veux tu avoir sur le serveur ?</mat-label>
+            <mat-select [(value)]="whitelist.avenirRp">
+              <mat-option>None</mat-option>
+              <mat-option value="lspd">Police</mat-option>
+              <mat-option value="ems">Médecin</mat-option>
+              <mat-option value="civil">Civil</mat-option>
+              <mat-option value="crimi">Criminalité</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </main>
+        <footer>
+          <input type="submit" value="Register" class="submitForm inputForm">
+        </footer>
+      </form>
+
+      <div *ngIf="!canWhitelist">
+        {{messageWhitelist}}
+      </div>
+    </div>
+  </div>
+</div>
+

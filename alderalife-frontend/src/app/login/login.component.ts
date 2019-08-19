@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
   confirmPassword: string;
   submitted = false;
 
+  error: string;
+
   constructor(public dialogRef: MatDialogRef<LoginComponent>, public auth: AuthService) {
   }
 
@@ -45,9 +47,33 @@ export class LoginComponent implements OnInit {
           },
           error => {
             console.log(error);
+            if (error.error.message == 'Bad credentials') {
+              this.error = 'Adresse mail ou mot de passe incorrect !';
+            }
           });
     } else {
-
+      if (this.password === this.confirmPassword) {
+        if (this.email === this.confirmEmail) {
+          this.auth.register(this.email, this.password, this.username)
+            .pipe(first())
+            .subscribe(
+              data => {
+                this.error = null;
+                console.log(data);
+                this.closePopup();
+              },
+              error => {
+                console.log(error);
+                this.error =  error.error.message;
+              });
+        } else {
+          this.error = 'Le mail et le mail de confirmation ne sont pas identique';
+          console.log(this.error);
+        }
+      } else {
+        this.error = 'Le mot de passe et le mot de passe de confirmation ne sont pas identique';
+        console.log(this.error);
+      }
     }
   }
 

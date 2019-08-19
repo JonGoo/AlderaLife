@@ -9,10 +9,21 @@ import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { LoginComponent } from './login/login.component';
-import {MatDialogModule, MatFormFieldModule} from '@angular/material';
+import {
+  MatCheckboxModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule, MatPaginatorModule,
+  MatSelectModule, MatTableModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { WhitelistComponent } from './whitelist/whitelist.component';
+import {PopupComponent} from './popup/popup.component';
+import { AdminComponent } from './admin/admin.component';
+import { WhitelistValidationComponent } from './admin/whitelist-validation/whitelist-validation.component';
+import { RulesComponent } from './rules/rules.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +33,11 @@ import {HttpClientModule} from '@angular/common/http';
     HomepageComponent,
     UserpageComponent,
     LoginComponent,
-
+    WhitelistComponent,
+    PopupComponent,
+    AdminComponent,
+    WhitelistValidationComponent,
+    RulesComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,15 +48,21 @@ import {HttpClientModule} from '@angular/common/http';
     MatFormFieldModule,
     FormsModule,
     HttpClientModule,
-
+    MatSelectModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [
-    LoginComponent
+    LoginComponent,
+    PopupComponent
   ],
   entryComponents: [
-    LoginComponent
+    LoginComponent,
+    PopupComponent
   ]
 })
 export class AppModule { }

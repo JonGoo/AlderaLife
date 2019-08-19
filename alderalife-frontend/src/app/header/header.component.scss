@@ -1,5 +1,5 @@
 #logo_title {
-  font-size: 3vw;
+  font-size: 4vw;
   font-family: "fall_is_comingregular", sans-serif;
   display: inline-block;
   letter-spacing: 4px;
@@ -9,7 +9,7 @@
 }
 
 #document_Header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,7 +34,7 @@
 }
 
 #logo {
-  height: 4.5vw;
+  height: 6.5vw;
   width: auto;
   display: inline-block;
   background-color: white;
@@ -63,14 +63,15 @@
 #menu {
   display: inline-block;
   font-family: "Roboto", sans-serif;
-  font-size: 1.6vw;
+  font-size: 2.6vw;
   margin: auto 1em auto auto;
   right: 0
 }
 
 #menu ul {
   text-align: center;
-  list-style: none
+  list-style: none;
+  padding: 0;
 }
 
 #menu ul li {
@@ -96,4 +97,10 @@
 #menu a:hover {
   background-color: var(--main-bg-color);
   color: white
+}
+
+@media only screen and (max-width: 1026px) {
+  #logo_title {
+    display: none;
+  }
 }

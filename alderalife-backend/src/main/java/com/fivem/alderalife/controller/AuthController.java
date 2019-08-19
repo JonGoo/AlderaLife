@@ -16,6 +16,7 @@ import com.fivem.alderalife.repository.UserRepository;
 import com.fivem.alderalife.security.JwtTokenProvider;
 import com.fivem.alderalife.service.EmailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -59,6 +60,9 @@ public class AuthController {
     @Autowired
     JwtTokenProvider tokenProvider;
 
+    @Value( "${server.port}" )
+    private String port;
+
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -79,12 +83,12 @@ public class AuthController {
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest,
                                           ModelAndView modelAndView) {
         if(userRepository.existsByUsername(signUpRequest.getUsername())) {
-            return new ResponseEntity(new ApiResponse(false, "Username is already taken!"),
+            return new ResponseEntity(new ApiResponse(false, "Le pseudo est déjà utilisé !"),
                     HttpStatus.BAD_REQUEST);
         }
 
         if(userRepository.existsByEmail(signUpRequest.getEmail())) {
-            return new ResponseEntity(new ApiResponse(false, "Email Address already in use!"),
+            return new ResponseEntity(new ApiResponse(false, "L'adresse mail est déjà utilisée !"),
                     HttpStatus.BAD_REQUEST);
         }
 
@@ -110,13 +114,19 @@ public class AuthController {
         mailMessage.setTo(user.getEmail());
         mailMessage.setSubject("Finis ton inscription !");
         mailMessage.setFrom("alderalifecontact@gmail.com");
-        mailMessage.setText("Pour confirmer votre inscription cliquez ici : "
-                +"http://localhost/api/auth/confirm?token="+confirmationToken.getConfirmationToken());
+        if (port == "80") {
+            mailMessage.setText("Pour confirmer votre inscription cliquez ici : "
+                    +"http://localhost/api/auth/confirm?token="+confirmationToken.getConfirmationToken());
+        } else {
+            mailMessage.setText("Pour confirmer votre inscription cliquez ici : "
+                    +"http://localhost:"+port+"/api/auth/confirm?token="+confirmationToken.getConfirmationToken());
+        }
+
 
         emailSenderService.sendEmail(mailMessage);
 
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/api/users/{username}")
+                .fromCurrentContextPath().path("")
                 .buildAndExpand(result.getUsername()).toUri();
 
         return ResponseEntity.created(location).body(new ApiResponse(true, "User registered successfully"));
