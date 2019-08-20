@@ -1,13 +1,11 @@
 {
   "/api": {
     "target": "http://aldera-life.vpsgta.com:5555",
-    "secure": false,
     "pathRewrite": {"^/api":  "/api"},
     "changeOrigin": true
   },
   "/server": {
     "target": "http://aldera-life.vpsgta.com:30120",
-    "secure": false,
     "pathRewrite": {"^/server":  ""},
     "changeOrigin": true
   }

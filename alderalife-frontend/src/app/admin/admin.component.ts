@@ -10,7 +10,7 @@ import {RestService} from "../services/rest.service";
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private auth: AuthService,
+  constructor(public auth: AuthService,
               private router: Router,
               private rest: RestService) {
     if (auth.isTokenExpired() || (!auth.isMod() && !auth.isAdmin())) {
