@@ -6,6 +6,6 @@ public class Constants {
     public static final String MY_EMAIL = "alderalifecontact@gmail.com";
 
     // password
-    public static final String MY_PASSWORD = "Goostry87541Aldera";
+    public static final String MY_PASSWORD = "PasswordNotOnGithub";
 
 }

@@ -81,4 +81,8 @@ export class RestService {
   getPlayers() {
     return this.http.get('/server/players.json');
   }
+
+  confirmEmail(token: string){
+    return this.http.get(this.prefix + 'auth/confirm?token=' + token);
+  }
 }

@@ -28,6 +28,7 @@ import { WhitelistValidationComponent } from './admin/whitelist-validation/white
 import { RulesComponent } from './rules/rules.component';
 import { UserListComponent } from './admin/user-list/user-list.component';
 import { ManageServerComponent } from './admin/manage-server/manage-server.component';
+import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ManageServerComponent } from './admin/manage-server/manage-server.compo
     RulesComponent,
     UserListComponent,
     ManageServerComponent,
+    ConfirmEmailComponent,
   ],
   imports: [
     BrowserModule,

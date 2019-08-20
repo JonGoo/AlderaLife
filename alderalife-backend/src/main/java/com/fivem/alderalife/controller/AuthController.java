@@ -119,7 +119,7 @@ public class AuthController {
                     +"http://localhost/api/auth/confirm?token="+confirmationToken.getConfirmationToken());
         } else {
             mailMessage.setText("Pour confirmer votre inscription cliquez ici : "
-                    +"http://localhost:"+port+"/api/auth/confirm?token="+confirmationToken.getConfirmationToken());
+                    +"https://aldera-life.fr/confirm-email?token="+confirmationToken.getConfirmationToken());
         }
 
 
