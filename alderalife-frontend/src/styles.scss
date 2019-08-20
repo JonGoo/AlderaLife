@@ -5,3 +5,15 @@
 body {
   margin: 0;
 }
+
+.error-message {
+  text-align: center;
+  font-weight: bolder;
+  color: var(--main-bg-color);
+  border: 1px black solid;
+  margin: 0 auto;
+  width: 27%;
+  padding: 1vh 1vw;
+  background: #b9b9b9;
+  border-radius: 1vw;
+}

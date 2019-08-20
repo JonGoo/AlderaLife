@@ -12,7 +12,7 @@
         <li><a routerLink="home" routerLinkActive="current">Home</a></li>
         <li><a routerLinkActive="current" routerLink="rules">Règles</a></li>
         <li><a routerLinkActive="current" routerLink="whitelist" *ngIf="!auth.isTokenExpired() && auth.isUser()">Whitelist</a></li>
-        <li><a routerLinkActive="current" routerLink="" *ngIf="!auth.isTokenExpired() && (auth.isWhitelist() || auth.isAdmin())">Page Perso</a></li>
+<!--        <li><a routerLinkActive="current" routerLink="" *ngIf="!auth.isTokenExpired() && (auth.isWhitelist() || auth.isAdmin())">Page Perso</a></li>-->
         <li><a routerLinkActive="current" routerLink="admin" *ngIf="!auth.isTokenExpired() && (auth.isAdmin() || auth.isMod())">Page Admin</a></li>
         <li><a (click)="connexionPopUp()" *ngIf="auth.isTokenExpired()">Connexion</a></li>
         <li><a (click)="logout()" *ngIf="!auth.isTokenExpired()">Déconnexion</a></li>

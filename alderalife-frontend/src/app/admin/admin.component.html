@@ -3,12 +3,11 @@
     <nav class="sideNav">
       <ul>
         <li class="patientMenu menu">
-          <p><b>Patient Management</b></p>
+          <p><b>Menu d'administration</b></p>
           <ul>
             <li class="subMenu" routerLinkActive="currentUserMenu" routerLink="whitelist"><a>Liste des demandes de Whitelist</a></li>
-            <li class="subMenu" routerLinkActive="currentUserMenu" routerLink="home"><a>Empty</a></li>
-            <li class="subMenu" routerLinkActive="currentUserMenu" routerLink="home"><a>Empty</a></li>
-            <li class="subMenu" routerLinkActive="currentUserMenu" routerLink="home"><a>Empty</a></li>
+            <li class="subMenu" routerLinkActive="currentUserMenu" routerLink="userList"><a>Liste des utilisateurs</a></li>
+            <li class="subMenu" routerLinkActive="currentUserMenu" routerLink="server" *ngIf="!auth.isTokenExpired() && auth.isAdmin()"><a>Administrer le serveur</a></li>
           </ul>
         </li>
       </ul>

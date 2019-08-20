@@ -10,12 +10,14 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { LoginComponent } from './login/login.component';
 import {
+  MatButtonModule,
   MatCheckboxModule,
   MatDialogModule,
   MatFormFieldModule,
   MatInputModule, MatPaginatorModule,
   MatSelectModule, MatTableModule
 } from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -24,6 +26,8 @@ import {PopupComponent} from './popup/popup.component';
 import { AdminComponent } from './admin/admin.component';
 import { WhitelistValidationComponent } from './admin/whitelist-validation/whitelist-validation.component';
 import { RulesComponent } from './rules/rules.component';
+import { UserListComponent } from './admin/user-list/user-list.component';
+import { ManageServerComponent } from './admin/manage-server/manage-server.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,8 @@ import { RulesComponent } from './rules/rules.component';
     AdminComponent,
     WhitelistValidationComponent,
     RulesComponent,
+    UserListComponent,
+    ManageServerComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +59,8 @@ import { RulesComponent } from './rules/rules.component';
     MatCheckboxModule,
     MatTableModule,
     MatPaginatorModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

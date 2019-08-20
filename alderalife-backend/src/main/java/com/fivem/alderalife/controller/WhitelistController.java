@@ -55,7 +55,7 @@ public class WhitelistController {
      * @return All the whitelists that are present into the database
      */
     @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody Iterable<Whitelist> getAllPatients() {
+    public @ResponseBody Iterable<Whitelist> getAllWhitelist() {
         // This returns a JSON
         LOGGER.info("Show the list of all whitelist in JSON format");
         return whitelistRepository.findAll();
@@ -95,7 +95,7 @@ public class WhitelistController {
 
     }
 
-    @RequestMapping(method = RequestMethod.PATCH, path = "/accept/{id}")
+    @RequestMapping(method = RequestMethod.PUT, path = "/accept/{id}")
     public @ResponseBody ResponseEntity<?> acceptWhitelist(@PathVariable Long id) {
         Whitelist whitelist = whitelistRepository.findById(id).get();
         User user = userRepository.findById(whitelist.getUser().getId()).get();

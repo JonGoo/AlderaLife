@@ -1,0 +1,92 @@
+.contentZone {
+  border: 1px solid black;
+  margin: 1em;
+  border-radius: 0 10px 10px 0;
+  overflow: auto;
+  padding: 1em;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  max-height: 100%;
+}
+
+.contentZone h1 {
+  text-align: center;
+}
+
+.serverManage {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+}
+
+#server {
+  grid-column: 1/3;
+  width: 50%;
+  margin: 0 auto;
+}
+.aldera-button {
+  width: 75%;
+  margin: 1vh 12.5%;
+  background-color: rgb(80, 80, 80);
+  border: none;
+  color: white;
+  padding: 1vh 2vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5vw;
+}
+
+.aldera-button:hover, .aldera-button:disabled {
+  color: rgb(80, 80, 80);
+  border: solid black 0.2vw;
+  background-color: white;
+}
+
+.online {
+  color: greenyellow;
+}
+
+.offline {
+  color: red;
+}
+
+#addWhitelist {
+  margin: 1vh 0;
+}
+
+#addWhitelist .mat-form-field, #announce .mat-form-field {
+  margin: 0 25%;
+  width: 50%;
+}
+
+#addWhitelist button, #announce button, #setgroup button {
+  width: 35%;
+  margin: 0 32.5%;
+  padding: 1vh 0;
+}
+
+#reloadWhitelist button {
+  margin: 12.5%;
+}
+
+table {
+  grid-column: 1/3;
+  margin: 0 2vw;
+}
+
+#setgroup {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+}
+
+#setgroup mat-form-field {
+  margin: 0 auto;
+  width: 75%;
+}
+
+#setgroup button {
+  grid-column: 1/3;
+}

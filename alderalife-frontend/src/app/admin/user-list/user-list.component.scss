@@ -1,0 +1,52 @@
+.contentZone {
+  border: 1px solid black;
+  margin: 1em;
+  border-radius: 0 10px 10px 0;
+  overflow: auto;
+  padding: 1em;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  max-height: 100%;
+}
+
+.contentZone h1 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+.selected {
+  background-color: #bebebe;
+}
+
+#role {
+  width: 100%;
+  margin: 1em auto 0;
+}
+
+#bottom {
+  width: 25%;
+  margin: 0 auto;
+}
+
+#bottom button {
+  width: 75%;
+  margin: 1vh 12.5%;
+  background-color: rgb(80, 80, 80);
+  border: none;
+  color: white;
+  padding: 1vh 2vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5vw;
+}
+
+#bottom button:hover {
+  color: rgb(80, 80, 80);
+  border: solid black 0.2vw;
+  background-color: white;
+}

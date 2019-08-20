@@ -1,0 +1,53 @@
+<div class="contentZone">
+  <div class="content">
+    <div class="userInfoZone">
+      <div *ngIf="message" class="error-message">{{message}}</div>
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef> Pseudo </th>
+          <td mat-cell *matCellDef="let row"> {{row.username}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Adresse Mail </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="roles">
+          <th mat-header-cell *matHeaderCellDef> Rôle </th>
+          <td mat-cell *matCellDef="let row"> {{row.roles[0].name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="enabled">
+          <th mat-header-cell *matHeaderCellDef> Activé </th>
+          <td mat-cell *matCellDef="let row"> {{row.enabled}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected]="user?.id==row.id" (click)="setUser(row)">
+        </tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      <div *ngIf="user.email" id="bottom">
+        <mat-form-field id="role">
+          <mat-label>Role</mat-label>
+          <mat-select name="role" [(ngModel)]="role">
+            <mat-option *ngFor="let rol of roles" [value]="rol">
+              {{rol.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button *ngIf="role" (click)="setUserRole()">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>

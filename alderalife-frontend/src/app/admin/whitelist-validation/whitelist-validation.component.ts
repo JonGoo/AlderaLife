@@ -19,6 +19,7 @@ export class WhitelistValidationComponent implements OnInit {
 
   dataSource: any;
   columnsToDisplay = ['id', 'pseudo', 'age', 'steamid', 'firstNameRp', 'lastNameRp', 'avenirRp'];
+  message: string;
 
 
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
@@ -37,11 +38,29 @@ export class WhitelistValidationComponent implements OnInit {
   }
 
   accept(id: number) {
-
+    this.rest.acceptWhitelist(id).subscribe(
+      (val) => {
+        this.message = 'Candidature acceptée';
+        this.rest.getWhitelistList().subscribe((res) => {
+          this.dataSource.data = Object.values(res);
+        });
+      },
+      response => {
+        this.message = 'Erreur';
+      });
   }
 
   refuse(id: number) {
-
+    this.rest.refuseWhitelist(id).subscribe(
+      (val) => {
+        this.message = 'Candidature refusée';
+        this.rest.getWhitelistList().subscribe((res) => {
+          this.dataSource.data = Object.values(res);
+        });
+      },
+      response => {
+        this.message = 'Erreur';
+      });
   }
 
 }
