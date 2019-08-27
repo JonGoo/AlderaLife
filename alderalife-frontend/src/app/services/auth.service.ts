@@ -96,7 +96,7 @@ export class AuthService {
   }
 
   login(email: string, password: string ) {
-    return this.http.post<any>('/api/auth/signin', {usernameOrEmail: email, password})
+    return this.http.post<any>('https://aldera-life.vpsgta.com:5555/api/auth/signin', {usernameOrEmail: email, password})
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user) {
@@ -109,7 +109,7 @@ export class AuthService {
   }
 
   register(email: string, password: string, username: string) {
-    return this.http.post<any>('/api/auth/signup', {username, email, password})
+    return this.http.post<any>('https://aldera-life.vpsgta.com:5555/api/auth/signup', {username, email, password})
       .pipe(map(user => {
 
         return user;

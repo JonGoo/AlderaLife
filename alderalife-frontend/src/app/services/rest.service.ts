@@ -10,7 +10,7 @@ export class RestService {
 
 
   httpOptions;
-  private prefix = '/api/';
+  private prefix = 'https://aldera-life.vpsgta.com:5555/api/';
 
   constructor(private http: HttpClient,
               private auth: AuthService) {
@@ -79,7 +79,7 @@ export class RestService {
   }
 
   getPlayers() {
-    return this.http.get('/server/players.json');
+    return this.http.get('https://aldera-life.vpsgta.com:30120/players.json');
   }
 
   confirmEmail(token: string){
